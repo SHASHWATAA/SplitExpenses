@@ -11,6 +11,11 @@
 </head>
 <body>
 <h1>Expense Splitter</h1>
+<div id="buttons">
+    {% for name in names %}
+        <button onclick="addRowWithName('{{ name }}')">{{ name }}</button>
+    {% endfor %}
+</div>
 <form action="/calculate" method="post">
     <div id="rows">
         <div class="row">

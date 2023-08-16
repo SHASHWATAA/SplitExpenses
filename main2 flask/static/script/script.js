@@ -33,7 +33,24 @@ function addRow() {
     nameInput.focus();
 }
 
-
+function addRowWithName(name) {
+    var rows = document.querySelectorAll('.row');
+    var firstRow = rows[0];
+    var firstNameInput = firstRow.querySelector('input[type=text]');
+    var firstExpenseInput = firstRow.querySelector('input[type=number]');
+    if (firstNameInput.value === '') {
+        firstNameInput.value = name;
+        firstExpenseInput.focus();
+    } else {
+        addRow();
+        var rows = document.querySelectorAll('.row')
+        var lastRow = rows[rows.length - 1];
+        var nameInput = lastRow.querySelector('input[type=text]');
+        var expenseInput = lastRow.querySelector('input[type=number]');
+        nameInput.value = name;
+        expenseInput.focus();
+    }
+}
 
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();

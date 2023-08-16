@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    with open('names.txt', 'r') as f:
+        names = f.read().splitlines()
+    return render_template('index.html', names=names)
 
 
 @app.route('/calculate', methods=['POST'])
