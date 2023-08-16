@@ -12,6 +12,9 @@ function addRow() {
     var expenseInput = document.createElement('input');
     expenseInput.type = 'number';
     expenseInput.name = 'names_expenses[]';
+    expenseInput.step = "0.1"
+    expenseInput.min = 0
+
     expenseInput.placeholder = 'Enter expense';
     row.appendChild(expenseInput);
 
