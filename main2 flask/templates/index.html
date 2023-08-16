@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Splitter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+
+    <style>
+
+
+    </style>
+</head>
+<body>
+<h1>Expense Splitter</h1>
+<form action="/calculate" method="post">
+    <div id="rows">
+        <div class="row">
+            <input type="text" name="names_expenses[]" placeholder="Enter name">
+            <input type="number" name="names_expenses[]" placeholder="Enter expense">
+        </div>
+    </div>
+    <div id="action-buttons">
+        <button type="button" onclick="addRow()">Add Row</button>
+        <input type="submit" value="Calculate">
+    </div>
+</form>
+<div id="result"></div>
+
+<script src="{{url_for('static', filename='script/script.js')}}"></script>
+</body>
+</html>
