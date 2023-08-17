@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    data_file_path = os.path.join(os.path.dirname(__file__), "names.txt")
+    data_file_path = os.path.join(os.path.dirname(__file__),"names.txt")
 
     with open(data_file_path, 'r') as f:
         names = f.read().splitlines()
