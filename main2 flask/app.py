@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 from waitress import serve
 
@@ -6,7 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    with open('names.txt', 'r') as f:
+    data_file_path = os.path.join(os.path.dirname(__file__), "names.txt")
+
+    with open(data_file_path, 'r') as f:
         names = f.read().splitlines()
     return render_template('index.html', names=names)
 
